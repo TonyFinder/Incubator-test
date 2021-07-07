@@ -1,0 +1,37 @@
+body {
+    height: 100vh;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    display: block;
+    margin: auto;
+    width: 60vw;
+}
+
+.logo {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+form div:first-child input {
+    width: 55vw;
+    margin: 35px 0;
+    border-color: #F5001D;
+    border-style: solid;
+    border-radius: 30px;
+    outline: none;
+    padding: 25px 2vw 25px 2vw;
+}
+
+form div:last-child input {
+    padding: 10px 15px 10px 15px;
+    border: none;
+    border-radius: 7px;
+    background: #98F23D;
+    font-size: 15px;
+}

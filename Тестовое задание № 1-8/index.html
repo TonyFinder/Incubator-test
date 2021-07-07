@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Тестовое. Инкубатор</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="тестовая, html-страница, web-документ" />
+    <meta name="description" content="Тест для инкубатора" />
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="images/google.png" alt="Иконка Google">
+        </div>
+        <form name="google" method="POST">
+            <div>
+                <input type="text" name="message"/>
+            </div>
+            <div>
+                <input type="submit" value="Найти"></>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        
+        // #5 Создать массив объектов. 3-4 объекта, каждый имеет свойства name и age. При нажатии на кнопку НАЙТИ также вывести ещё и св-во name первого объекта в массиве
+        var firstMassive = [
+            {name: "Anton", age: 28},
+            {name: "Anna", age: 20},
+            {name: "Igor", age: 30}
+        ];
+
+        // #6 Создать функцию superSum, которая будет в алерте показывать сумму ЛЮБЫХ двух чисел, переданных этой функции через параметры 
+        var superSum = function (x, y) {
+            return x + y;
+        };
+
+        // #7 Создать массив из чисел в перемешку (не отсортированы). 
+        // С помощью цикла for найти максимальный и минимальный элементы в массиве
+        var secondMassive = [45, 13, 1, 32, 9, 135, 5];
+        var findMinMax = function () {
+            var min = secondMassive[0];
+            var max = secondMassive[0];
+
+            for (var i = 1; i < secondMassive.length; i++) {
+                if (secondMassive[i] < min) {
+                    min = secondMassive[i]
+                }
+                if (secondMassive[i] > max) {
+                    max = secondMassive[i]
+                }
+            };
+            return "Минимальное значение: " + min + ". Максимальное значение: " + max;
+        };
+
+        // #8 Создать 2 переменные a и b… присвоить им любые значения. Потом программно поменять эти значения местами, не используя значения напрямую        
+        let a = 111;
+        let b = 123;
+        let c = 0;
+
+        c = a;
+        a = b;
+        b = c;
+
+        console.log(a);
+        console.log(b);
+
+        // #9 Оформить алгоритм поиска максимального числа в массиве как функцию findMax (чтобы можно было передавать в неё любой массив чисел, а на выходе она возвращала нам максимальное число из массива)
+
+        var thirdMassive = [54, 4, 9, 455, 12, 53];
+
+        var findMax = function(anyMassive) {
+            var maximum = anyMassive[0];
+
+            for (var j = 1; j < anyMassive.length; j++) {
+                if (anyMassive[j] > maximum) {
+                    maximum = anyMassive[j]
+                }
+            };
+            return maximum;
+        };
+
+        // #10 Показать alert с результатом поиска не сразу, а через 3 секунды после нажатия (всё то же самое, как и работало, в частности с “яндекс круче всех”, но с задержкой в 3 секунды)
+
+        // Вывод всех данных в alert
+        document.forms.google.onsubmit = function () {
+            var message = this.message.value;
+            if (message === "google") {
+                alert("Из задания №4: " + "Yandex круче. Но это не точно" + "\nИз задания №5: " + firstMassive[0].name + "\nИз задания №6: " + superSum(56, 44) + "\nИз задания №7: " + findMinMax(secondMassive) + "\nИз задания №9: Максимальное значение в массиве " + findMax(thirdMassive)); 
+            } else {
+                alert("Из задания №3: " + message + "\nИз задания №5: " + firstMassive[0].name + "\nИз задания №6: " + superSum(56, 44) + "\nИз задания №7: " + findMinMax(secondMassive) + "\nИз задания №9: Максимальное значение в массиве " + findMax(thirdMassive));
+            }
+        };
+
+    </script>
+</body>
+</html>

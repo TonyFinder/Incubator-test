@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Тестовое. Инкубатор</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="тестовая, html-страница, web-документ" />
+    <meta name="description" content="Тест для инкубатора" />
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="images/google.png" alt="Иконка Google">
+        </div>
+        <form name="google" method="POST">
+            <div>
+                <input type="text" name="message"/>
+            </div>
+            <div>
+                <input type="submit" value="Найти"></>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // #9 Оформить алгоритм поиска максимального числа в массиве как функцию findMax (чтобы можно было передавать в неё любой массив чисел, а на выходе она возвращала нам максимальное число из массива)
+        // #10 Показать alert с результатом поиска не сразу, а через 3 секунды после нажатия (всё то же самое, как и работало, в частности с “яндекс круче всех”, но с задержкой в 3 секунды)
+        var thirdMassive = [54, 4, 9, 455, 12, 53];
+
+        var findMax = function(anyMassive) {
+            var maximum = anyMassive[0];
+
+            for (var j = 1; j < anyMassive.length; j++) {
+                if (anyMassive[j] > maximum) {
+                    maximum = anyMassive[j]
+                }
+            };
+            return maximum;
+        };
+
+        setTimeout(function() {alert("Наибольшее число в массиве " + findMax(thirdMassive));}, 3000);
+        
+    </script>
+</body>
+</html>
